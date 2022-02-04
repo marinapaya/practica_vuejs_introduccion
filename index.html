@@ -7,15 +7,34 @@
         <meta name="author" content="">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
 
     <body>
-
-        <h1 id="autor">Autor: TU NOMBRE AQUÍ</h1>
-
-        <!-- https://vuejs.org/v2/guide/index.html -->
+        <div class="container">       
+        <h1 id="autor">Autor: MARINA PAYÁ</h1>
         <div id="app">
-            <!--
+            <div class="jumbotron">
+                <h1 class="display-4" id="title">{{ col.collection.title }}</h1> 
+            </div>
+            <div class="card-group">
+                <div class="card" v-for="item in col.collection.items">
+                    <div class="card-body" v-for="pelicula in item.data">
+                        <dl>
+                            <dt class="card-text"> 
+                                {{ pelicula.prompt }}
+                            </dt>
+                            <dd class="card-text">
+                                {{pelicula.value}}
+                            </dd>
+                        </dl>
+                    </div>
+                    <a class="btn btn-primary btn-lg"  v-bind:href="item.href" role="button">Ver</a>
+                </div>            
+            </div>
+            
+                
+             <!--
                  TODO: Mostrar datos del objeto collection. Ver archivo ./js/script.js
                - Cargar la librería de VueJS y el script ./js/script.js al final de la etiqueta <body>
                - Cargar el CSS de Bootstrap (no es necesario el JS)
@@ -27,9 +46,10 @@
                    - El término <dt> será la propiedad "prompt"
                    - La definición <dd> será la propiedad "value"
             -->
-
         </div>
-
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="./js/script.js"></script>
+    </div>
     </body>
 
 </html>
