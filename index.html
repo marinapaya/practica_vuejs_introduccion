@@ -11,17 +11,19 @@
     </head>
 
     <body>
-        <div class="container">       
+               
         <h1 id="autor">Autor: MARINA PAYÁ</h1>
         <div id="app">
+                
             <div class="jumbotron">
                 <h1 class="display-4" id="title">{{ col.collection.title }}</h1> 
             </div>
+            <div class="container">
             <div class="card-group">
                 <div class="card" v-for="item in col.collection.items">
                     <div class="card-body" v-for="pelicula in item.data">
                         <dl>
-                            <dt class="card-text"> 
+                            <dt class="card-title"> 
                                 {{ pelicula.prompt }}
                             </dt>
                             <dd class="card-text">
